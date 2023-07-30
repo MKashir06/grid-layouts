@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        padding: 1rem;
+      }
+
+      .mainContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(3, 250px);
+        grid-gap: 1rem;
+      }
+
+      /* .container1,
+      .container2,
+      .container3,
+      .container4,
+      .container5,
+      .container6,
+      .container7,
+      .container8,
+      .container9 {
+        width: 100%;
+        height: 100vh;
+      } */
+
+      .container1 {
+        display: grid;
+        grid-template-areas:
+          "div1Cont1 div2Cont1 div3Cont1"
+          "div4Cont1 div5Cont1 div6Cont1";
+        grid-gap: 0.5rem;
+        background-color: black;
+        padding: 0.5rem;
+      }
+
+      /* .div1Cont1,
+      .div2Cont1,
+      .div3Cont1,
+      .div4Cont1,
+      .div5Cont1,
+      .div6Cont1 {
+        width: 400px;
+        height: 50vh;
+      } */
+
+      .div1Cont1 {
+        grid-area: div1Cont1;
+        background-color: #fc6057;
+      }
+      .div2Cont1 {
+        grid-area: div2Cont1;
+        background-color: #fd825c;
+      }
+      .div3Cont1 {
+        grid-area: div3Cont1;
+        background-color: #fda061;
+      }
+      .div4Cont1 {
+        grid-area: div4Cont1;
+        background-color: #01a787;
+      }
+      .div5Cont1 {
+        grid-area: div5Cont1;
+        background-color: #1bc1a1;
+      }
+      .div6Cont1 {
+        grid-area: div6Cont1;
+        background-color: #34daba;
+      }
+
+      .container2 {
+        display: grid;
+        grid-template-areas:
+          "div1Cont2 div1Cont2 div2Cont2"
+          "div3Cont2 div4Cont2 div2Cont2";
+        grid-gap: 0.5rem;
+        background-color: black;
+        padding: 0.5rem;
+      }
+      .div1Cont2 {
+        grid-area: div1Cont2;
+        background-color: #fc6057;
+      }
+      .div2Cont2 {
+        grid-area: div2Cont2;
+        background-color: #fda061;
+      }
+      .div3Cont2 {
+        grid-area: div3Cont2;
+        background-color: #01a787;
+      }
+      .div4Cont2 {
+        grid-area: div4Cont2;
+        background-color: #1bc1a1;
+      }
+
+      .container3 {
+        display: grid;
+        grid-template-areas:
+          "div1Cont3 div1Cont3 div1Cont3"
+          "div2Cont3 div3Cont3 div3Cont3"
+          "div4Cont3 div4Cont3 div4Cont3";
+        grid-template-rows: 40px auto 40px;
+        grid-gap: 0.5rem;
+        background-color: black;
+        padding: 0.5rem;
+      }
+      .div1Cont3 {
+        grid-area: div1Cont3;
+        background-color: #fda061;
+      }
+      .div2Cont3 {
+        grid-area: div2Cont3;
+        background-color: #01a787;
+      }
+      .div3Cont3 {
+        grid-area: div3Cont3;
+        background-color: #fc6057;
+      }
+      .div4Cont3 {
+        grid-area: div4Cont3;
+        background-color: #1bc1a1;
+      }
+
+      .container4 {
+        display: grid;
+        grid-template-areas:
+          "div1Cont4 div1Cont4 div2Cont4 div2Cont4"
+          "div3Cont4 div4Cont4 div4Cont4 div4Cont4"
+          "div5Cont4 div5Cont4 div5Cont4 div5Cont4";
+        grid-template-rows: 75px auto 30px;
+        grid-gap: 0.5rem;
+        background-color: black;
+        padding: 0.5rem;
+      }
+      .div1Cont4 {
+        grid-area: div1Cont4;
+        background-color: #fd825c;
+      }
+      .div2Cont4 {
+        grid-area: div2Cont4;
+        background-color: #fc6057;
+      }
+      .div3Cont4 {
+        grid-area: div3Cont4;
+        background-color: #01a787;
+      }
+      .div4Cont4 {
+        grid-area: div4Cont4;
+        background-color: #1bc1a1;
+      }
+      .div5Cont4 {
+        grid-area: div5Cont4;
+        background-color: #fda061;
+      }
+
+      .container5 {
+        display: grid;
+        grid-template-areas:
+          "div1Cont5 div2Cont5 div3Cont5 div4Cont5 div5Cont5 div6Cont5"
+          "div7Cont5 div8Cont5 div9Cont5 div10Cont5 div11Cont5 div12Cont5"
+          "div13Cont5 div14Cont5 div15Cont5 div16Cont5 div17Cont5 div18Cont5";
+        grid-gap: 0.5rem;
+        background-color: black;
+        padding: 0.5rem;
+      }
+      .div1Cont5 {
+        grid-area: div1Cont5;
+        background-color: #01a787;
+      }
+      .div2Cont5 {
+        grid-area: div2Cont5;
+        background-color: #fd825c;
+      }
+      .div3Cont5 {
+        grid-area: div3Cont5;
+        background-color: #1bc1a1;
+      }
+      .div4Cont5 {
+        grid-area: div4Cont5;
+        background-color: #fc6057;
+      }
+      .div5Cont5 {
+        grid-area: div5Cont5;
+        background-color: #34daba;
+      }
+      .div6Cont5 {
+        grid-area: div6Cont5;
+        background-color: #fd825c;
+      }
+      .div7Cont5 {
+        grid-area: div7Cont5;
+        background-color: #fda061;
+      }
+      .div8Cont5 {
+        grid-area: div8Cont5;
+        background-color: #01a787;
+      }
+      .div9Cont5 {
+        grid-area: div9Cont5;
+        background-color: #fd825c;
+      }
+      .div10Cont5 {
+        grid-area: div10Cont5;
+        background-color: #fda061;
+      }
+      .div11Cont5 {
+        grid-area: div11Cont5;
+        background-color: #fea161;
+      }
+      .div12Cont5 {
+        grid-area: div12Cont5;
+        background-color: #fc6057;
+      }
+      .div13Cont5 {
+        grid-area: div13Cont5;
+        background-color: #01a787;
+      }
+      .div14Cont5 {
+        grid-area: div14Cont5;
+        background-color: #fc6057;
+      }
+      .div15Cont5 {
+        grid-area: div15Cont5;
+        background-color: #1bc1a1;
+      }
+      .div16Cont5 {
+        grid-area: div16Cont5;
+        background-color: #fd825c;
+      }
+      .div17Cont5 {
+        grid-area: div17Cont5;
+        background-color: #01a787;
+      }
+      .div18Cont5 {
+        grid-area: div18Cont5;
+        background-color: #34daba;
+      }
+
+      .container6 {
+        display: grid;
+        grid-template-areas:
+          "div1Cont6 div1Cont6 div2Cont6 div3Cont6"
+          "div4Cont6 div5Cont6 div6Cont6 ."
+          "div7Cont6 div7Cont6 div8Cont6 div9Cont6"
+          "div7Cont6 div7Cont6 div10Cont6 ."
+          "div11Cont6 div11Cont6 div11Cont6 div12Cont6";
+        grid-gap: 0.5rem;
+        background-color: black;
+        padding: 0.5rem;
+      }
+      .div1Cont6 {
+        grid-area: div1Cont6;
+        background-color: #fd6057;
+      }
+      .div2Cont6 {
+        grid-area: div2Cont6;
+        background-color: #01a787;
+      }
+      .div3Cont6 {
+        grid-area: div3Cont6;
+        background-color: #fda061;
+      }
+      .div4Cont6 {
+        grid-area: div4Cont6;
+        background-color: #fd825c;
+      }
+      .div5Cont6 {
+        grid-area: div5Cont6;
+        background-color: #00a787;
+      }
+      .div6Cont6 {
+        grid-area: div6Cont6;
+        background-color: #1bc1a1;
+      }
+      .div7Cont6 {
+        grid-area: div7Cont6;
+        background-color: #fda061;
+      }
+      .div8Cont6 {
+        grid-area: div8Cont6;
+        background-color: #34daba;
+      }
+      .div9Cont6 {
+        grid-area: div9Cont6;
+        background-color: #fd6057;
+      }
+      .div10Cont6 {
+        grid-area: div10Cont6;
+        background-color: #01a787;
+      }
+      .div11Cont6 {
+        grid-area: div11Cont6;
+        background-color: #34daba;
+      }
+      .div12Cont6 {
+        grid-area: div12Cont6;
+        background-color: #fda061;
+      }
+
+      .container7 {
+        display: grid;
+        grid-template-areas:
+          "div1Cont7 div2Cont7"
+          "div3Cont7 div4Cont7";
+        grid-template-rows: 30px auto;
+        grid-gap: 0.5rem;
+        background-color: black;
+        padding: 0.5rem;
+      }
+      .div1Cont7 {
+        grid-area: div1Cont7;
+        background-color: #fda061;
+      }
+      .div2Cont7 {
+        grid-area: div2Cont7;
+        background-color: #34daba;
+      }
+      .div3Cont7 {
+        grid-area: div3Cont7;
+        background-color: #fc6057;
+      }
+      .div4Cont7 {
+        grid-area: div4Cont7;
+        background-color: #07ab89;
+
+        display: grid;
+        grid-template-areas:
+          "div1Cont7div4 div1Cont7div4"
+          "div2Cont7div4 div3Cont7div4";
+        grid-gap: 0.5rem;
+        padding: 0.5rem;
+      }
+      .div1Cont7div4 {
+        grid-area: div1Cont7div4;
+        background-color: #34daba;
+      }
+      .div2Cont7div4 {
+        grid-area: div2Cont7div4;
+        background-color: #1bc1a1;
+      }
+      .div3Cont7div4 {
+        grid-area: div3Cont7div4;
+        background-color: #fda061;
+      }
+
+      .container8 {
+        display: grid;
+        grid-template-areas:
+          "div1Cont8 div2Cont8 div3Cont8 div4Cont8 div5Cont8"
+          "div6Cont8 div7Cont8 div8Cont8 div8Cont8 div8Cont8"
+          "div9Cont8 div9Cont8 div9Cont8 div9Cont8 div9Cont8";
+        grid-gap: 0.5rem;
+        background-color: black;
+        padding: 0.5rem;
+      }
+      .div1Cont8 {
+        grid-area: div1Cont8;
+        background-color: #fc6057;
+      }
+      .div2Cont8 {
+        grid-area: div2Cont8;
+        background-color: #fda061;
+      }
+      .div3Cont8 {
+        grid-area: div3Cont8;
+        background-color: #34daba;
+      }
+      .div4Cont8 {
+        grid-area: div4Cont8;
+        background-color: #1bc1a1;
+      }
+      .div5Cont8 {
+        grid-area: div5Cont8;
+        background-color: #01a787;
+      }
+      .div6Cont8 {
+        grid-area: div6Cont8;
+        background-color: #fda061;
+      }
+      .div7Cont8 {
+        grid-area: div7Cont8;
+        background-color: #fc6057;
+      }
+      .div8Cont8 {
+        grid-area: div8Cont8;
+        background-color: #fd825c;
+      }
+      .div9Cont8 {
+        grid-area: div9Cont8;
+        background-color: #34daba;
+      }
+
+      .container9 {
+        display: grid;
+        grid-template-areas:
+          "div1Cont9 div1Cont9 div1Cont9"
+          "div2Cont9 div3Cont9 div3Cont9"
+          "div2Cont9 div4Cont9 div5Cont9";
+        grid-template-rows: 70px auto;
+        grid-gap: 0.5rem;
+        background-color: black;
+        padding: 0.5rem;
+      }
+      .div1Cont9 {
+        grid-area: div1Cont9;
+        background-color: #fda061;
+      }
+      .div2Cont9 {
+        grid-area: div2Cont9;
+        background-color: #01a787;
+      }
+      .div3Cont9 {
+        grid-area: div3Cont9;
+        background-color: #34daba;
+      }
+      .div4Cont9 {
+        grid-area: div4Cont9;
+        background-color: #fc6057;
+      }
+      .div5Cont9 {
+        grid-area: div5Cont9;
+        background-color: #fda161;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mainContainer">
+      <div class="container1">
+        <div class="div1Cont1"></div>
+        <div class="div2Cont1"></div>
+        <div class="div3Cont1"></div>
+        <div class="div4Cont1"></div>
+        <div class="div5Cont1"></div>
+        <div class="div6Cont1"></div>
+      </div>
+
+      <div class="container2">
+        <div class="div1Cont2"></div>
+        <div class="div2Cont2"></div>
+        <div class="div3Cont2"></div>
+        <div class="div4Cont2"></div>
+      </div>
+
+      <div class="container3">
+        <div class="div1Cont3"></div>
+        <div class="div2Cont3"></div>
+        <div class="div3Cont3"></div>
+        <div class="div4Cont3"></div>
+      </div>
+
+      <div class="container4">
+        <div class="div1Cont4"></div>
+        <div class="div2Cont4"></div>
+        <div class="div3Cont4"></div>
+        <div class="div4Cont4"></div>
+        <div class="div5Cont4"></div>
+      </div>
+
+      <div class="container5">
+        <div class="div1Cont5"></div>
+        <div class="div2Cont5"></div>
+        <div class="div3Cont5"></div>
+        <div class="div4Cont5"></div>
+        <div class="div5Cont5"></div>
+        <div class="div6Cont5"></div>
+        <div class="div7Cont5"></div>
+        <div class="div8Cont5"></div>
+        <div class="div9Cont5"></div>
+        <div class="div10Cont5"></div>
+        <div class="div11Cont5"></div>
+        <div class="div12Cont5"></div>
+        <div class="div13Cont5"></div>
+        <div class="div14Cont5"></div>
+        <div class="div15Cont5"></div>
+        <div class="div16Cont5"></div>
+        <div class="div17Cont5"></div>
+        <div class="div18Cont5"></div>
+      </div>
+
+      <div class="container6">
+        <div class="div1Cont6"></div>
+        <div class="div2Cont6"></div>
+        <div class="div3Cont6"></div>
+        <div class="div4Cont6"></div>
+        <div class="div5Cont6"></div>
+        <div class="div6Cont6"></div>
+        <div class="div7Cont6"></div>
+        <div class="div8Cont6"></div>
+        <div class="div9Cont6"></div>
+        <div class="div10Cont6"></div>
+        <div class="div11Cont6"></div>
+        <div class="div12Cont6"></div>
+      </div>
+
+      <div class="container7">
+        <div class="div1Cont7"></div>
+        <div class="div2Cont7"></div>
+        <div class="div3Cont7"></div>
+        <div class="div4Cont7">
+          <div class="div1Cont7div4"></div>
+          <div class="div2Cont7div4"></div>
+          <div class="div3Cont7div4"></div>
+        </div>
+      </div>
+
+      <div class="container8">
+        <div class="div1Cont8"></div>
+        <div class="div2Cont8"></div>
+        <div class="div3Cont8"></div>
+        <div class="div4Cont8"></div>
+        <div class="div5Cont8"></div>
+        <div class="div6Cont8"></div>
+        <div class="div7Cont8"></div>
+        <div class="div8Cont8"></div>
+        <div class="div9Cont8"></div>
+      </div>
+
+      <div class="container9">
+        <div class="div1Cont9"></div>
+        <div class="div2Cont9"></div>
+        <div class="div3Cont9"></div>
+        <div class="div4Cont9"></div>
+        <div class="div5Cont9"></div>
+      </div>
+    </div>
+  </body>
+</html>
